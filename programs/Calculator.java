@@ -1,3 +1,4 @@
+package MiniProjects;
 import java.awt.EventQueue;
 
 
@@ -345,7 +346,7 @@ public class Calculator {
 				{
 				  warning.setText("square");
 				  first = Double.parseDouble(text.getText());
-				  text.setText( Double.toString(first*first) );
+				  text.setText( String.format("%.2f", first * first ) );
 				}
 				catch(Exception ex)
 				{
@@ -374,7 +375,7 @@ public class Calculator {
 				{
 				  warning.setText("cube");
 				  first = Double.parseDouble(text.getText());
-				  text.setText( Double.toString(first*first*first) );
+				  text.setText( String.format("%.2f", first * first * first ) );
 				}
 				catch(Exception ex)
 				{
@@ -430,30 +431,30 @@ public class Calculator {
 		equalBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try
-				{
+				{				  
 				  warning.setText("=");
 				  second = Double.parseDouble( text.getText() );
 				
 				  switch( operator )
 				  {
-				       case '+' :
-					   text.setText( Double.toString( first + second ) );
+				       case '+' :				       
+					   text.setText( String.format("%.2f", first + second ) );
 					   break;
 					   
-				       case '-' :
-					   text.setText( Double.toString( first - second ) );
+				       case '-' :				       
+					   text.setText( String.format("%.2f", first - second ) );
 					   break;
 					   
 				       case '*' :
-					   text.setText( Double.toString( first * second ) );
+					   text.setText( String.format("%.2f", first * second ) );
 					   break;
 					   
 				       case '/' :
-					   text.setText( Double.toString( first / second ) );
+					   text.setText( String.format("%.2f", first / second ) );
 					   break;
 					   
 				       case '%' :
-					   text.setText( Double.toString( first % second ) );
+					   text.setText( String.format("%.2f", first % second ) );
 					   break;
 					   
 				       case '&' :
