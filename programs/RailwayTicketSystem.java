@@ -25,6 +25,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
+import java.awt.print.PrinterException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.event.ActionEvent;
@@ -72,14 +73,14 @@ public class RailwayTicketSystem {
 		frame.getContentPane().setBackground(new Color(0, 128, 128));
 		frame.setType(Type.UTILITY);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(RailwayTicketSystem.class.getResource("/MiniProjects/logo.png")));
-		frame.setBounds(100, 100, 1432, 859);
+		frame.setBounds(100, 100, 1517, 859);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panelHeading = new JPanel();
 		panelHeading.setBackground(Color.WHITE);
 		panelHeading.setBorder(new LineBorder(new Color(0, 0, 0), 4, true));
-		panelHeading.setBounds(10, 10, 1398, 172);
+		panelHeading.setBounds(10, 10, 1483, 172);
 		frame.getContentPane().add(panelHeading);
 		panelHeading.setLayout(null);
 		
@@ -98,7 +99,7 @@ public class RailwayTicketSystem {
 		
 		JPanel panelDetails = new JPanel();
 		panelDetails.setBackground(new Color(0, 128, 128));
-		panelDetails.setBounds(10, 202, 836, 620);
+		panelDetails.setBounds(10, 192, 836, 630);
 		frame.getContentPane().add(panelDetails);
 		panelDetails.setLayout(null);
 		
@@ -113,7 +114,7 @@ public class RailwayTicketSystem {
 		tname.setHorizontalAlignment(SwingConstants.LEFT);
 		tname.setToolTipText("Enter name");
 		tname.setForeground(Color.BLACK);
-		tname.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		tname.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		tname.setBounds(253, 31, 310, 25);
 		panelDetails.add(tname);
 		tname.setColumns(10);
@@ -128,7 +129,7 @@ public class RailwayTicketSystem {
 		tcontact.setToolTipText("Enter contact no");
 		tcontact.setHorizontalAlignment(SwingConstants.LEFT);
 		tcontact.setForeground(Color.BLACK);
-		tcontact.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		tcontact.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		tcontact.setColumns(10);
 		tcontact.setBounds(253, 79, 310, 25);
 		panelDetails.add(tcontact);
@@ -143,7 +144,7 @@ public class RailwayTicketSystem {
 		JTextArea taddress = new JTextArea();
 		taddress.setForeground(Color.BLACK);
 		taddress.setToolTipText("Enter address");
-		taddress.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		taddress.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		taddress.setBounds(253, 180, 310, 55);
 		panelDetails.add(taddress);
 		
@@ -165,7 +166,7 @@ public class RailwayTicketSystem {
 		temail.setToolTipText("Enter email");
 		temail.setHorizontalAlignment(SwingConstants.LEFT);
 		temail.setForeground(Color.BLACK);
-		temail.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		temail.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		temail.setColumns(10);
 		temail.setBounds(253, 131, 310, 25);
 		panelDetails.add(temail);
@@ -198,9 +199,9 @@ public class RailwayTicketSystem {
 		depart.setBounds(10, 477, 176, 25);
 		panelDetails.add(depart);
 		
-		JDateChooser date = new JDateChooser();
-		//SimpleDateFormat d = new SimpleDateFormat("yyyy-MM-dd");		
-		//String datestr = d.format(date.getDate());
+		JDateChooser date = new JDateChooser();		
+//		SimpleDateFormat d = new SimpleDateFormat("dd/MM/yyyy");		
+//		String datestr = d.format(date.getDate());
 //		Date date2 = date.getDate();
 //		String datestr = (String)date.toString(); 
 		date.setBounds(253, 477, 117, 25);
@@ -236,7 +237,7 @@ public class RailwayTicketSystem {
 		tnop.setToolTipText("Enter passengers");
 		tnop.setHorizontalAlignment(SwingConstants.LEFT);
 		tnop.setForeground(Color.BLACK);
-		tnop.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		tnop.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		tnop.setColumns(10);
 		tnop.setBounds(253, 369, 84, 25);
 		panelDetails.add(tnop);
@@ -254,7 +255,7 @@ public class RailwayTicketSystem {
 		tage.setToolTipText("Enter age");
 		tage.setHorizontalAlignment(SwingConstants.LEFT);
 		tage.setForeground(Color.BLACK);
-		tage.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		tage.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		tage.setColumns(10);
 		tage.setBounds(253, 264, 84, 25);
 		panelDetails.add(tage);
@@ -266,16 +267,6 @@ public class RailwayTicketSystem {
 		female.setBackground(new Color(0, 128, 128));
 		female.setBounds(372, 308, 117, 35);
 		panelDetails.add(female);
-		
-		JButton btnAddNop = new JButton("Add");
-		btnAddNop.setFont(new Font("Courier New", Font.BOLD, 21));
-		btnAddNop.setBounds(376, 370, 85, 25);
-		panelDetails.add(btnAddNop);
-		
-		JButton btnViewNop = new JButton("View");
-		btnViewNop.setFont(new Font("Courier New", Font.BOLD, 21));
-		btnViewNop.setBounds(478, 370, 85, 25);
-		panelDetails.add(btnViewNop);
 		
 		JLabel contactWarn = new JLabel("");
 		contactWarn.setForeground(Color.YELLOW);
@@ -307,6 +298,24 @@ public class RailwayTicketSystem {
 		nopWarn.setBounds(565, 369, 250, 25);
 		panelDetails.add(nopWarn);
 		
+		JPanel panelTicket = new JPanel();
+		panelTicket.setBackground(new Color(0, 128, 128));
+		panelTicket.setBounds(856, 192, 637, 620);
+		frame.getContentPane().add(panelTicket);
+		panelTicket.setLayout(null);
+		
+		JLabel lblNewLabel_3 = new JLabel("E-Ticket");
+		lblNewLabel_3.setForeground(SystemColor.text);
+		lblNewLabel_3.setFont(new Font("Courier New", Font.BOLD, 40));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(62, 10, 532, 64);
+		panelTicket.add(lblNewLabel_3);
+		
+		JTextArea tticket = new JTextArea();
+		tticket.setFont(new Font("Book Antiqua", Font.PLAIN, 25));
+		tticket.setBounds(20, 103, 607, 387);
+		panelTicket.add(tticket);
+		
 		JButton btnReset = new JButton("Reset");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -315,44 +324,39 @@ public class RailwayTicketSystem {
 				temail.setText("");
 				taddress.setText("");
 				tage.setText("");
-				tnop.setText("");				
+				tnop.setText("");	
+				tticket.setText("");
 			}
 		});
+		
 		btnReset.setFont(new Font("Courier New", Font.BOLD, 21));
 		btnReset.setBounds(409, 551, 124, 35);
 		panelDetails.add(btnReset);
 		
-		JPanel panelTicket = new JPanel();
-		panelTicket.setBackground(new Color(0, 128, 128));
-		panelTicket.setBounds(856, 192, 552, 620);
-		frame.getContentPane().add(panelTicket);
-		panelTicket.setLayout(null);
-		
-		JLabel lblNewLabel_3 = new JLabel("E-Ticket");
-		lblNewLabel_3.setForeground(SystemColor.text);
-		lblNewLabel_3.setFont(new Font("Courier New", Font.BOLD, 40));
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(10, 10, 532, 64);
-		panelTicket.add(lblNewLabel_3);
-		
-		JTextArea tticket = new JTextArea();
-		tticket.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		tticket.setBounds(20, 103, 522, 351);
-		panelTicket.add(tticket);
+		JButton btnPrint = new JButton("Print");
+		btnPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					tticket.print();
+				} catch (PrinterException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
+			}
+		});
+		btnPrint.setFont(new Font("Courier New", Font.BOLD, 21));
+		btnPrint.setBounds(269, 551, 124, 35);
+		panelTicket.add(btnPrint);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBackground(SystemColor.infoText);
 		separator.setForeground(SystemColor.menuText);
-		separator.setBounds(0, 84, 552, 2);
+		separator.setBounds(0, 84, 637, 2);
 		panelTicket.add(separator);
-		
-		JButton btnPrint = new JButton("Print");
-		btnPrint.setFont(new Font("Courier New", Font.BOLD, 21));
-		btnPrint.setBounds(230, 551, 124, 35);
-		panelTicket.add(btnPrint);
 		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				try
 				{
@@ -394,9 +398,10 @@ public class RailwayTicketSystem {
 						temail.getText().contains("@gmail.com") && taddress.getText().length() > 10 &&
 						(Integer.parseInt( tage.getText() ) > 0 || Integer.parseInt( tage.getText() ) <= 120) &&
 						Integer.parseInt( tnop.getText() ) > 0 && from != null && to != null)
-						tticket.setText("Train-E-Ticket\n"
+						tticket.setText("\t                  Train-E-Ticket\n"
+								         + "-------------------------------------------------------------------------------\n"
 								         +"NAME :- "+tname.getText()+"\nCONTACT NO :- "+tcontact.getText()
-								         +"\nEMAIL :-"+temail.getText()+"\nADDRESS :- "+taddress.getText()
+								         +"\nEMAIL :- "+temail.getText()+"\nADDRESS :- "+taddress.getText()
 								         +"\nAGE :- "+tage.getText()+"\nGENDER :- "+gender
 								         +"\nNo Of PASSENGER :- "+tnop.getText()+"\nFROM :- "+from+"\nTO :- "+to
 								         +"\nDATE :- "+date );
