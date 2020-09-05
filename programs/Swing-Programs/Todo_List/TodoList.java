@@ -282,7 +282,7 @@ public class TodoList {
 							}
 							table.addRow(s);
 						}
-					} else {
+					} else if(tablenum==2){
 						stmt = connection.createStatement();
 						stmt.executeUpdate("update other set othertask= '" + newtxt + "' where othertask= '" + prevtxt + "'");
 						
