@@ -396,7 +396,7 @@ public class TodoList {
 							table.addRow(s);
 						}
 						
-					} else {
+					} else if(tablenum==2) {
 						stmt = connection.createStatement();
 						stmt.executeUpdate("delete from other where othertask= '" + deltxt + "'");
 						
