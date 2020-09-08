@@ -1,7 +1,6 @@
 package MiniProjects.LibraryManagementSystem;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Window.Type;
 import java.awt.Color;
