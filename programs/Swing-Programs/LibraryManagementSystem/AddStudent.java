@@ -128,7 +128,19 @@ public class AddStudent extends JFrame {
 		idText.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		idText.setBounds(352, 116, 180, 30);
 		panel.add(idText);
-		idText.setColumns(10);
+		idText.setColumns(10);			
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet result = stmt.executeQuery("select id from addstudent");
+			long idDB = 0;
+
+			while (result.next())
+				idDB = result.getLong("id");
+			
+			idText.setText(String.valueOf(idDB + 1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		JLabel lblNewLabel_1_1 = new JLabel("Name");
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.LEFT);
