@@ -125,7 +125,7 @@ public class DeleteStudent extends JFrame {
 
 		idText = new JTextField();
 		idText.setForeground(SystemColor.desktop);
-		idText.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		idText.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		idText.setColumns(10);
 		idText.setBorder(new LineBorder(Color.BLACK, 2, true));
 		idText.setBounds(352, 116, 180, 30);
@@ -142,7 +142,7 @@ public class DeleteStudent extends JFrame {
 		nameText.setBackground(Color.WHITE);
 		nameText.setEditable(false);
 		nameText.setForeground(SystemColor.desktop);
-		nameText.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		nameText.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nameText.setColumns(10);
 		nameText.setBorder(new LineBorder(Color.BLACK, 2, true));
 		nameText.setBounds(352, 175, 180, 30);
@@ -173,7 +173,7 @@ public class DeleteStudent extends JFrame {
 		phoneText.setBackground(Color.WHITE);
 		phoneText.setEditable(false);
 		phoneText.setForeground(SystemColor.desktop);
-		phoneText.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		phoneText.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		phoneText.setColumns(10);
 		phoneText.setBorder(new LineBorder(Color.BLACK, 2, true));
 		phoneText.setBounds(352, 357, 180, 30);
@@ -325,7 +325,7 @@ public class DeleteStudent extends JFrame {
 
 		classText = new JTextField();
 		classText.setForeground(SystemColor.desktop);
-		classText.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		classText.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		classText.setEditable(false);
 		classText.setColumns(10);
 		classText.setBorder(new LineBorder(Color.BLACK, 2, true));
@@ -335,7 +335,7 @@ public class DeleteStudent extends JFrame {
 
 		subText = new JTextField();
 		subText.setForeground(SystemColor.desktop);
-		subText.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		subText.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		subText.setEditable(false);
 		subText.setColumns(10);
 		subText.setBorder(new LineBorder(Color.BLACK, 2, true));

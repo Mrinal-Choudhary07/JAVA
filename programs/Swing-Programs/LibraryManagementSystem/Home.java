@@ -58,6 +58,12 @@ public class Home extends JFrame {
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Login_Portal.main(new String[0]);
+				dispose();
+			}
+		});
 		btnNewButton.setIcon(new ImageIcon(Home.class.getResource("/MiniProjects/LibraryManagementSystem/img/logoutBtn.png")));
 		btnNewButton.setFont(new Font("Consolas", Font.BOLD, 16));
 		btnNewButton.setBounds(1185, 148, 91, 41);
@@ -183,10 +189,13 @@ public class Home extends JFrame {
 		JButton btnNewButton_2 = new JButton("");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Statistics statistics;
+				ViewStudent student1;
+				ViewBook book1;
 				try {
-					statistics = new Statistics();
-					statistics.setVisible(true);
+					student1 = new ViewStudent();
+					student1.setVisible(true);
+					book1 = new ViewBook();
+					book1.setVisible(true);
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -199,6 +208,18 @@ public class Home extends JFrame {
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_1_2 = new JButton("");
+		btnNewButton_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddBook addBook;
+				try {
+					addBook = new AddBook();
+					addBook.setVisible(true);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+			}
+		});
 		btnNewButton_1_2.setIcon(new ImageIcon(Home.class.getResource("/MiniProjects/LibraryManagementSystem/img/addBook.png")));
 		btnNewButton_1_2.setBorder(null);
 		btnNewButton_1_2.setBackground(Color.WHITE);
@@ -206,6 +227,18 @@ public class Home extends JFrame {
 		panel.add(btnNewButton_1_2);
 		
 		JButton btnNewButton_1_1_1 = new JButton("");
+		btnNewButton_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DeleteBook delBook;
+				try {
+					delBook = new DeleteBook();
+					delBook.setVisible(true);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+			}
+		});
 		btnNewButton_1_1_1.setIcon(new ImageIcon(Home.class.getResource("/MiniProjects/LibraryManagementSystem/img/delBook.png")));
 		btnNewButton_1_1_1.setBorder(null);
 		btnNewButton_1_1_1.setBackground(Color.WHITE);
@@ -213,6 +246,18 @@ public class Home extends JFrame {
 		panel.add(btnNewButton_1_1_1);
 		
 		JButton btnNewButton_2_1 = new JButton("");
+		btnNewButton_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IssueBook issueBook;
+				try {
+					issueBook = new IssueBook();
+					issueBook.setVisible(true);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+			}
+		});
 		btnNewButton_2_1.setIcon(new ImageIcon(Home.class.getResource("/MiniProjects/LibraryManagementSystem/img/issueBook.png")));
 		btnNewButton_2_1.setBorder(null);
 		btnNewButton_2_1.setBounds(850, 463, 200, 185);
@@ -236,13 +281,13 @@ public class Home extends JFrame {
 		lblNewLabel_3_1_1.setBounds(222, 643, 147, 35);
 		panel.add(lblNewLabel_3_1_1);
 		
-		JLabel lblNewLabel_3_2 = new JLabel("Add Student");
+		JLabel lblNewLabel_3_2 = new JLabel("Add Book");
 		lblNewLabel_3_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_3_2.setBounds(742, 417, 135, 35);
 		panel.add(lblNewLabel_3_2);
 		
-		JLabel lblNewLabel_3_1_2 = new JLabel("Delete Student");
+		JLabel lblNewLabel_3_1_2 = new JLabel("Delete Book");
 		lblNewLabel_3_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_3_1_2.setBounds(1031, 413, 147, 35);
@@ -253,5 +298,11 @@ public class Home extends JFrame {
 		separator_1_2.setBackground(Color.BLACK);
 		separator_1_2.setBounds(185, 208, 413, 2);
 		panel.add(separator_1_2);
+		
+		JLabel lblNewLabel_3_1_2_1 = new JLabel("Issue Book");
+		lblNewLabel_3_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1_2_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_3_1_2_1.setBounds(883, 643, 147, 35);
+		panel.add(lblNewLabel_3_1_2_1);
 	}
 }

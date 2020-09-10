@@ -63,7 +63,7 @@ public class ForgetPswd_Portal extends JFrame {
 	public ForgetPswd_Portal() throws Exception {
 		connection = CreateConnection.getConnection("LibraryManagementSystem");
 		setType(Type.UTILITY);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 607, 605);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
