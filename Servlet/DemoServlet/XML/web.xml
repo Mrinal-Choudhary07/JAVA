@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>IntroToServlet</display-name>
+  <servlet>
+    <servlet-name>sample</servlet-name>
+    <servlet-class>DemoServlet.doPostMethod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sample</servlet-name>
+    <url-pattern>/sample</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>checkDemo</servlet-name>
+    <servlet-class>DemoServlet.doPostMethod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkDemo</servlet-name>
+    <url-pattern>/checkBox</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Radio</servlet-name>
+    <servlet-class>DemoServlet.ServletToServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Radio</servlet-name>
+    <url-pattern>/rd</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DemoServerToServer1</servlet-name>
+    <servlet-class>DemoServlet.doGetMethod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServerToServer1</servlet-name>
+    <url-pattern>/DemoRequestDispatcher</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DemoServerToServer2</servlet-name>
+    <servlet-class>DemoServlet.doGetMethod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServerToServer2</servlet-name>
+    <url-pattern>/DemoSendRedirect</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  <param-name>name</param-name>
+  <param-value>Mrinal</param-value>  
+  </context-param>
+  
+  <servlet>
+    <servlet-name>ServletConfig</servlet-name>
+    <servlet-class>DemoServlet.ServletConfigAndContext</servlet-class>
+    <init-param>
+    <param-name>name</param-name>
+    <param-value>Mrinal</param-value>
+    </init-param>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConfig</servlet-name>
+    <url-pattern>/ServletConfig</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
