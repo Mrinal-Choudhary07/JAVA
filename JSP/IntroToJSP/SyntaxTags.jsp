@@ -8,21 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<%@
         include file="DemoIncludePage.jsp"
-     %>
+         %>
      
-	<%!int x = 10;%>
-	<!-- Declaration tag -->
+	<%!int x = 10; %> <!-- Declaration tag -->
 
 	<%
 		out.println("Sciplet tag");
 		//x = x / 0; Demo for exception
 	%><br>
 
-	<%=x%>
-	<!-- Expression tag -->
+	<%= x %>	<!-- Expression tag -->
 
 </body>
 </html>
