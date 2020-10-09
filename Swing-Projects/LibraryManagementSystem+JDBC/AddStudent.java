@@ -1,6 +1,7 @@
 package MiniProjects.LibraryManagementSystem;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -30,8 +31,6 @@ import javax.swing.JFileChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.border.LineBorder;
-
-import MiniProjects.Todo_List.CreateConnection;
 
 public class AddStudent extends JFrame {
 
@@ -208,8 +207,7 @@ public class AddStudent extends JFrame {
 		uploadBtn.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		uploadBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				uploadFlag = true;
+			public void actionPerformed(ActionEvent e) {				
 				int returnVal = fileDialog.showOpenDialog(frame);
 
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -282,7 +280,7 @@ public class AddStudent extends JFrame {
 						ps.setString(2, name);
 						ps.setString(3, classes);
 						ps.setString(4, subjects);
-						ps.setLong(5, phoneNumber);
+						ps.setLong(5, phoneNumber);						
 						ps.setBinaryStream(6, image);
 
 						int check = ps.executeUpdate();

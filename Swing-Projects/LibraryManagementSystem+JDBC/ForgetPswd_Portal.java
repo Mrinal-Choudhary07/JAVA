@@ -1,6 +1,7 @@
 package MiniProjects.LibraryManagementSystem;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,13 +15,8 @@ import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
-
-import MiniProjects.Todo_List.CreateConnection;
-
-import java.awt.Window.Type;
 import java.awt.SystemColor;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;

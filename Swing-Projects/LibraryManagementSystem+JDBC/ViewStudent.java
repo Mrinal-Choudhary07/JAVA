@@ -2,6 +2,7 @@ package MiniProjects.LibraryManagementSystem;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -10,25 +11,17 @@ import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.swing.SwingConstants;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
-
-import MiniProjects.Todo_List.CreateConnection;
 import javax.swing.border.LineBorder;
-import java.awt.Window.Type;
-import java.awt.SystemColor;
+
 
 public class ViewStudent extends JFrame {
 

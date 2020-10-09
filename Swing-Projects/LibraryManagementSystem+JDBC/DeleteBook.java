@@ -1,6 +1,5 @@
 package MiniProjects.LibraryManagementSystem;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,19 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.Image;
 
 import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
-
-import MiniProjects.Todo_List.CreateConnection;
-
-import javax.swing.JComboBox;
-import javax.swing.JSpinner;
 import javax.swing.JButton;
-import java.awt.Window.Type;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -244,10 +236,10 @@ public class DeleteBook extends JFrame {
 
 						result = ps.executeQuery();
 						result.next();
-						String bookDB = result.getString("bookname");
-						String authorDB = result.getString("authorName");
-						String langDB = result.getString("language");
-						long quanDB = result.getLong("quantity");
+						String bookDB = result.getString("book");
+						String authorDB = result.getString("author");
+						String langDB = result.getString("lang");
+						long quanDB = result.getLong("quan");
 
 						bookText.setText(bookDB);
 						authorText.setText(authorDB);

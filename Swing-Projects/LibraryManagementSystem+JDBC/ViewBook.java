@@ -1,6 +1,5 @@
 package MiniProjects.LibraryManagementSystem;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,8 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JScrollPane;
-import javax.swing.border.LineBorder;
-import java.awt.SystemColor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,9 +18,6 @@ import javax.swing.JSeparator;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
-import MiniProjects.Todo_List.CreateConnection;
-import java.awt.Window.Type;
 
 public class ViewBook extends JFrame {
 
@@ -55,7 +49,7 @@ public class ViewBook extends JFrame {
 		setType(Type.UTILITY);
 		connection = CreateConnection.getConnection("LibraryManagementSystem");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 747, 673);
+		setBounds(900, 100, 747, 673);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

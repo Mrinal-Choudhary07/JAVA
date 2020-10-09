@@ -1,6 +1,7 @@
 package MiniProjects.LibraryManagementSystem;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,22 +12,18 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.Image;
 
 import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import MiniProjects.Todo_List.CreateConnection;
-
 import javax.swing.JComboBox;
-import javax.swing.JSpinner;
+
 import javax.swing.JButton;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
-import java.awt.Window.Type;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -228,19 +225,22 @@ public class IssueBook extends JFrame {
 						ps = connection.prepareStatement("select book , lang , quan , id from addbook");
 						result = ps.executeQuery();
 
+						bookComboBox.removeAllItems();
 						bookComboBox.addItem("Select any book");
 						while (result.next()) {
 							// delete the book having zero quantity
-							if (result.getInt("quan") == 0) {
+							if (result.getInt("quan") <= 0) {
 								long idnum = result.getLong("id");
 								ps = connection.prepareStatement("delete from addbook where id = ?");
 								ps.setLong(1, idnum);
 								ps.executeUpdate();
 							}
 							// retrieve the book having more than zero quantity
-							if (result.getInt("quan") > 0)
+							if (result.getInt("quan") > 0) {
 								bookComboBox.addItem(
 										result.getString("book") + "(written in:- " + result.getString("lang") + ")");
+							}
+
 						}
 						issueBtn.setVisible(true);
 					} else {
@@ -349,19 +349,32 @@ public class IssueBook extends JFrame {
 					result.next();
 					int quan = result.getInt("quan");
 
-					ps = connection.prepareStatement("update addbook set quan = ? where book = ? and lang = ?");
-					ps.setInt(1, --quan);
-					ps.setString(2, divideBookName[0]);
-					ps.setString(3, divideBookName[1]);
+					if (quan <= 0) {
+						ps = connection.prepareStatement("delete from addbook where book = ? and lang = ? ");
+						ps.setString(1, divideBookName[0]);
+						ps.setString(2, divideBookName[1]);
+						int check = ps.executeUpdate();
+						System.out.println((check == 1) ? "DELETED BOOK WHERE QUANTITY = 0" : "ERROR");
 
-					int check = ps.executeUpdate();
-					System.out.println((check == 1) ? "UPDATED QUANTITY INTO DB" : "ERROR");
+						jLabel = new JLabel(divideBookName[0] + " is out of stock, sorry for inconvenience .");
+						jLabel.setFont(new Font("Arial", Font.BOLD, 16));
+						jLabel.setForeground(Color.black);
+						JOptionPane.showMessageDialog(bookComboBox, jLabel);
 
-					jLabel = new JLabel(divideBookName[0] + " book is issued to " + stuNameText.getText() + ".");
-					jLabel.setFont(new Font("Arial", Font.BOLD, 16));
-					jLabel.setForeground(Color.black);
-					JOptionPane.showMessageDialog(bookComboBox, jLabel);
+					} else {
+						ps = connection.prepareStatement("update addbook set quan = ? where book = ? and lang = ?");
+						ps.setInt(1, --quan);
+						ps.setString(2, divideBookName[0]);
+						ps.setString(3, divideBookName[1]);
 
+						int check = ps.executeUpdate();
+						System.out.println((check == 1) ? "UPDATED QUANTITY INTO DB" : "ERROR");
+
+						jLabel = new JLabel(divideBookName[0] + " book is issued to " + stuNameText.getText() + ".");
+						jLabel.setFont(new Font("Arial", Font.BOLD, 16));
+						jLabel.setForeground(Color.black);
+						JOptionPane.showMessageDialog(bookComboBox, jLabel);
+					}
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
