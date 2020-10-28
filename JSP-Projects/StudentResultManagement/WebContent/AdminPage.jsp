@@ -264,82 +264,77 @@
 				</div>
 
 				<div id="viewres" class="div" style="display: none;">
-
-					<form action="#">
-						<br>
-						<table cellpadding="20" align="center" border="3"
-							style="font-size: 25px; color: black; border: 1px solid black; position: sticky;">
-							<tr bgcolor="grey" style="">
-								<th>Roll-No</th>
-								<th>Sub-1</th>
-								<th>Marks</th>
-								<th>Sub-2</th>
-								<th>Marks</th>
-								<th>Sub-3</th>
-								<th>Marks</th>
-								<th>Total</th>
-								<th>Percentage</th>
-								<th>Full-Result</th>
-							</tr>
-							<%
-								// Accessing data from addStudent table
-									try {
-										Connection connection = CreateConnection.getConnection();
-										PreparedStatement ps = connection.prepareStatement("select * from result");
-										ResultSet set = ps.executeQuery();
-										while (set.next()) {
-											int s1 = set.getInt("sub1");
-											int s2 = set.getInt("sub2");
-											int s3 = set.getInt("sub3");
-							%>
-							<tr bgcolor="white">
-								<td>
-									<%
-										out.print(set.getInt("roll"));
-									%>
-								</td>
-								<td>
-									<%
-										out.print(set.getString("sub1name"));
-									%>
-								</td>
-								<td>
-									<%
-										out.print(set.getInt("sub1"));
-									%>
-								</td>
-								<td>
-									<%
-										out.print(set.getString("sub2name"));
-									%>
-								</td>
-								<td>
-									<%
-										out.print(set.getInt("sub2"));
-									%>
-								</td>
-								<td>
-									<%
-										out.print(set.getString("sub2name"));
-									%>
-								</td>
-								<td>
-									<%
-										out.print(set.getInt("sub3"));
-									%>
-								</td>
-								<td><%=s1 + s2 + s3 + "/450" %> </td>
-								<td><%=((s1 + s2 + s3) * 100) / 450 + "%" %> </td>
-								<td colspan="2"><a href="#">View</a></td>
-							</tr>
-							<%
+					<br>
+					<table cellpadding="20" align="center" border="3"
+						style="font-size: 25px; color: black; border: 1px solid black; position: sticky;">
+						<tr bgcolor="#707070">
+							<th>Roll-No</th>
+							<th>Sub-1</th>
+							<th>Marks</th>
+							<th>Sub-2</th>
+							<th>Marks</th>
+							<th>Sub-3</th>
+							<th>Marks</th>
+							<th>Total</th>
+							<th>Percentage</th>
+						</tr>
+						<%
+							// Accessing data from addStudent table
+								try {
+									Connection connection = CreateConnection.getConnection();
+									PreparedStatement ps = connection.prepareStatement("select * from result");
+									ResultSet set = ps.executeQuery();
+									while (set.next()) {
+										int s1 = set.getInt("sub1");
+										int s2 = set.getInt("sub2");
+										int s3 = set.getInt("sub3");
+						%>
+						<tr bgcolor="white">
+							<td>
+								<%
+									out.print(set.getInt("roll"));
+								%>
+							</td>
+							<td>
+								<%
+									out.print(set.getString("sub1name"));
+								%>
+							</td>
+							<td>
+								<%
+									out.print(set.getInt("sub1"));
+								%>
+							</td>
+							<td>
+								<%
+									out.print(set.getString("sub2name"));
+								%>
+							</td>
+							<td>
+								<%
+									out.print(set.getInt("sub2"));
+								%>
+							</td>
+							<td>
+								<%
+									out.print(set.getString("sub2name"));
+								%>
+							</td>
+							<td>
+								<%
+									out.print(set.getInt("sub3"));
+								%>
+							</td>
+							<td><%=s1 + s2 + s3 + "/450"%></td>
+							<td><%=((s1 + s2 + s3) * 100) / 450 + "%"%></td>
+						</tr>
+						<%
+							}
+								} catch (Exception e) {
+									e.printStackTrace();
 								}
-									} catch (Exception e) {
-										e.printStackTrace();
-									}
-							%>
-						</table>
-					</form>
+						%>
+					</table>
 				</div>
 			</div>
 		</div>
