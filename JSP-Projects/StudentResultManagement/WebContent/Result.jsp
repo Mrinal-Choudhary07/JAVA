@@ -162,12 +162,12 @@
 						       out.print(s3+25);%></td>
 					</tr>
 					<tr>
-						<td colspan="7" class="td-text" style="font-size: 23px;"
+						<td colspan="7" class="td-text" style="font-size: 30px;"
 							align="center">Grand-Total</td>
 						<td><%=total+"/450" %></td>
 					</tr>
 					<tr>
-						<td colspan="7" class="td-text" style="font-size: 23px;"
+						<td colspan="7" class="td-text" style="font-size: 30px;"
 							align="center">Percentage</td>
 						<td>
 						<%=per+"%" %>
